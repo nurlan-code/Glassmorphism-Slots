@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsible Gaming - Glassmorphism Slots</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+            background-attachment: fixed;
+            color: #fff;
+            overflow-x: hidden;
+        }
+
+        nav {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 1rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            background: linear-gradient(135deg, #fff, #f093fb);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+        }
+
+        .nav-links a:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: #fff;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        .page-header {
+            padding: 3rem 2rem;
+            text-align: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .page-header h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .back-home {
+            display: inline-block;
+            margin-top: 1rem;
+            padding: 0.8rem 2rem;
+            background: rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 25px;
+            color: #fff;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .back-home:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+        }
+
+        .content-section {
+            padding: 2rem 2rem 4rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .content-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 3rem;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            margin-bottom: 2rem;
+        }
+
+        .content-card h2 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: #f093fb;
+            margin-top: 2rem;
+        }
+
+        .content-card h2:first-child {
+            margin-top: 0;
+        }
+
+        .content-card h3 {
+            font-size: 1.3rem;
+            margin-top: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .content-card p {
+            line-height: 1.8;
+            margin-bottom: 1rem;
+            opacity: 0.95;
+        }
+
+        .content-card ul, .content-card ol {
+            margin-left: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .content-card li {
+            margin-bottom: 0.5rem;
+            line-height: 1.6;
+        }
+
+        .warning-box {
+            background: rgba(244, 67, 54, 0.2);
+            border-left: 4px solid #f44336;
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin: 1.5rem 0;
+        }
+
+        .warning-box strong {
+            color: #ff6b6b;
+        }
+
+        .info-box {
+            background: rgba(33, 150, 243, 0.2);
+            border-left: 4px solid #2196f3;
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin: 1.5rem 0;
+        }
+
+        .success-box {
+            background: rgba(76, 175, 80, 0.2);
+            border-left: 4px solid #4caf50;
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin: 1.5rem 0;
+        }
+
+        .helpline-card {
+            background: linear-gradient(135deg, rgba(244, 67, 54, 0.3), rgba(156, 39, 176, 0.3));
+            backdrop-filter: blur(15px);
+            padding: 2rem;
+            border-radius: 20px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            margin: 2rem 0;
+            text-align: center;
+        }
+
+        .helpline-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .helpline-item {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 1rem;
+            border-radius: 10px;
+            margin: 1rem 0;
+        }
+
+        .helpline-item strong {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .checklist {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 1.5rem;
+            border-radius: 15px;
+            margin: 1.5rem 0;
+        }
+
+        .checklist-item {
+            padding: 0.8rem;
+            margin: 0.5rem 0;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            border-left: 3px solid #f093fb;
+        }
+
+        footer {
+            background: rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(10px);
+            padding: 3rem 2rem 1rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: #fff;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            opacity: 0.7;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                gap: 0;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            .page-header h1 {
+                font-size: 2rem;
+            }
+
+            .content-card {
+                padding: 2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .logo {
+                font-size: 1.5rem;
+            }
+
+            .content-card h2 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <div class="logo">🎰 Glassmorphism Slots</div>
+            <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="games.html">Games</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="terms.html">Terms</a></li>
+                <li><a href="privacy.html">Privacy</a></li>
+                <li><a href="responsible.html">Responsible Gaming</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="page-header">
+        <h1>🛡️ Responsible Gaming</h1>
+        <p style="font-size: 1.2rem; opacity: 0.9;">Play safely and stay in control</p>
+        <a href="index.html" class="back-home">← Back to Home</a>
+    </div>
+
+    <section class="content-section">
+        <div class="content-card">
+            <div class="success-box">
+                <p><strong>Our Commitment:</strong> Glassmorphism Slots is a demo platform designed to provide entertainment without financial risk. We promote responsible gaming and awareness about gambling-related issues.</p>
+            </div>
+
+            <h2>1. Understanding Our Platform</h2>
+            <p>Glassmorphism Slots is NOT a real money gambling site. All games are in demo mode using virtual credits that have no real-world value. You cannot:</p>
+            <ul>
+                <li>Deposit or spend real money</li>
+                <li>Win real money or prizes</li>
+                <li>Withdraw any winnings</li>
+                <li>Exchange virtual credits for anything of value</li>
+            </ul>
+
+            <h3>Purpose of This Platform</h3>
+            <p>We created this platform to:</p>
+            <ul>
+                <li>Provide safe entertainment without financial risk</li>
+                <li>Help people understand casino games without gambling</li>
+                <li>Offer an alternative to real money gambling</li>
+                <li>Promote awareness about responsible gaming</li>
+            </ul>
+
+            <h2>2. What is Problem Gambling?</h2>
+            <p>Problem gambling (gambling disorder) is the urge to gamble continuously despite harmful consequences or the desire to stop. It can affect anyone who gambles, and the consequences can be severe.</p>
+
+            <h3>Types of Gambling Problems</h3>
+            <ul>
+                <li><strong>Social Gambling:</strong> Occasional, recreational gambling with friends</li>
+                <li><strong>At-Risk Gambling:</strong> Gambling that compromises, disrupts, or damages personal, family, or vocational pursuits</li>
+                <li><strong>Problem Gambling:</strong> Gambling behavior that causes disruptions in psychological, physical, social, or vocational functioning</li>
+                <li><strong>Compulsive Gambling:</strong> Inability to resist the urge to gamble despite serious negative consequences</li>
+            </ul>
+
+            <h2>3. Warning Signs of Problem Gambling</h2>
+            <p>Be aware of these warning signs in yourself or loved ones:</p>
+
+            <div class="checklist">
+                <div class="checklist-item">
+                    ⚠️ Spending more money and time on gambling than intended
+                </div>
+                <div class="checklist-item">
+                    ⚠️ Lying to family and friends about gambling activities
+                </div>
+                <div class="checklist-item">
+                    ⚠️ Feeling the need to gamble with increasing amounts of money
+                </div>
+                <div class="checklist-item">
+                    ⚠️ Trying to win back losses by gambling more (chasing losses)
+                </div>
+                <div class="checklist-item">
+                    ⚠️ Borrowing money or selling possessions to gamble
+                </div>
+                <div class="checklist-item">
+                    ⚠️ Neglecting work, school, or family responsibilities
+                </div>
+                <div class="checklist-item">
+                    ⚠️ Feeling restless or irritable when trying to cut down
+                </div>
+                <div class="checklist-item">
+                    ⚠️ Gambling to escape problems or relieve negative feelings
+                </div>
+                <div class="checklist-item">
+                    ⚠️ Jeopardizing relationships, jobs, or opportunities due to gambling
+                </div>
+                <div class="checklist-item">
+                    ⚠️ Relying on others to provide money to relieve financial situations caused by gambling
+                </div>
+            </div>
+
+            <div class="warning-box">
+                <p><strong>If you recognize 4 or more of these signs in yourself or someone you know, it's time to seek professional help.</strong></p>
+            </div>
+
+            <h2>4. Tips for Responsible Gaming</h2>
+            <p>Whether playing demo games or considering real gambling, follow these guidelines:</p>
+
+            <h3>Set Limits</h3>
+            <ul>
+                <li>Set a time limit for gaming sessions</li>
+                <li>If gambling with real money elsewhere: Set a budget you can afford to lose</li>
+                <li>Never chase losses</li>
+                <li>Take regular breaks</li>
+            </ul>
+
+            <h3>Stay Informed</h3>
+            <ul>
+                <li>Understand that the house always has an advantage</li>
+                <li>Know the odds of the games you play</li>
+                <li>Recognize that gambling is entertainment, not income</li>
+                <li>Learn about the psychology of gambling</li>
+            </ul>
+
+            <h3>Keep Perspective</h3>
+            <ul>
+                <li>Don't gamble when upset, depressed, or under influence</li>
+                <li>Balance gambling with other activities</li>
+                <li>Don't use gambling to solve financial problems</li>
+                <li>Remember that winning is based on chance, not skill (in most games)</li>
+            </ul>
+
+            <h3>Protect Yourself</h3>
+            <ul>
+                <li>Never borrow money to gamble</li>
+                <li>Don't gamble on credit</li>
+                <li>Keep gambling separate from everyday finances</li>
+                <li>Don't try to win back losses</li>
+            </ul>
+
+            <h2>5. Recognizing the Difference: Demo vs. Real Gambling</h2>
+            
+            <div class="info-box">
+                <p><strong>Important Distinction:</strong> Playing demo games is fundamentally different from real money gambling.</p>
+            </div>
+
+            <h3>Demo Gaming (Like Our Platform):</h3>
+            <ul>
+                <li>✓ No financial risk whatsoever</li>
+                <li>✓ Can't lose real money</li>
+                <li>✓ Can't win real money</li>
+                <li>✓ Purely for entertainment and learning</li>
+                <li>✓ No emotional attachment to losses</li>
+            </ul>
+
+            <h3>Real Money Gambling:</h3>
+            <ul>
+                <li>✗ Financial risk involved</li>
+                <li>✗ Can lose significant money</li>
+                <li>✗ Can lead to financial problems</li>
+                <li>✗ May trigger addictive behavior</li>
+                <li>✗ Emotional and psychological impact</li>
+            </ul>
+
+            <h2>6. Self-Assessment Quiz</h2>
+            <p>Answer these questions honestly to assess your relationship with gambling:</p>
+
+            <div class="checklist">
+                <p><strong>In the past 12 months:</strong></p>
+                <div class="checklist-item">
+                    1. Have you needed to gamble with more money to get the same excitement?
+                </div>
+                <div class="checklist-item">
+                    2. Have you felt restless or irritable when trying to stop gambling?
+                </div>
+                <div class="checklist-item">
+                    3. Have you tried to control, cut back, or stop gambling unsuccessfully?
+                </div>
+                <div class="checklist-item">
+                    4. Have you been preoccupied with gambling (thinking about past experiences or planning future ventures)?
+                </div>
+                <div class="checklist-item">
+                    5. Have you gambled when feeling distressed?
+                </div>
+                <div class="checklist-item">
+                    6. After losing money, have you returned to "get even"?
+                </div>
+                <div class="checklist-item">
+                    7. Have you lied about your gambling?
+                </div>
+                <div class="checklist-item">
+                    8. Has gambling jeopardized a relationship, job, or opportunity?
+                </div>
+                <div class="checklist-item">
+                    9. Have you relied on others for money due to gambling?
+                </div>
+            </div>
+
+            <div class="warning-box">
+                <p><strong>If you answered YES to 4 or more questions, you may have a gambling problem and should seek professional help immediately.</strong></p>
+            </div>
+
+            <h2>7. Getting Help</h2>
+            <p>If you or someone you know has a gambling problem, help is available. Recovery is possible with the right support.</p>
+
+            <div class="helpline-card">
+                <h3>🆘 International Gambling Help Resources</h3>
+                
+                <div class="helpline-item">
+                    <strong>National Council on Problem Gambling (USA)</strong>
+                    <p>Call: 1-800-522-4700<br>
+                    Website: www.ncpgambling.org<br>
+                    24/7 Confidential Helpline</p>
+                </div>
+
+                <div class="helpline-item">
+                    <strong>Gamblers Anonymous</strong>
+                    <p>Website: www.gamblersanonymous.org<br>
+                    International support groups and meetings</p>
+                </div>
+
+                <div class="helpline-item">
+                    <strong>GamCare (UK)</strong>
+                    <p>Call: 0808 8020 133<br>
+                    Website: www.gamcare.org.uk<br>
+                    Free, confidential support</p>
+                </div>
+
+                <div class="helpline-item">
+                    <strong>Gambling Therapy</strong>
+                    <p>Website: www.gamblingtherapy.org<br>
+                    Free online support in multiple languages</p>
+                </div>
+
+                <div class="helpline-item">
+                    <strong>BeGambleAware</strong>
+                    <p>Website: www.begambleaware.org<br>
+                    Information and support for problem gambling</p>
+                </div>
+            </div>
+
+            <h3>Types of Professional Help Available</h3>
+            <ul>
+                <li><strong>Counseling and Therapy:</strong> Individual, group, or family therapy</li>
+                <li><strong>Support Groups:</strong> Gamblers Anonymous and similar programs</li>
+                <li><strong>Residential Treatment:</strong> Inpatient programs for severe cases</li>
+                <li><strong>Cognitive Behavioral Therapy (CBT):</strong> Helps change gambling thoughts and behaviors</li>
+                <li><strong>Financial Counseling:</strong> Help managing debt and rebuilding finances</li>
+                <li><strong>Medication:</strong> In some cases, medication can help reduce urges</li>
+            </ul>
+
+            <h2>8. Helping Someone with a Gambling Problem</h2>
+            <p>If you're concerned about a loved one's gambling:</p>
+
+            <h3>Do:</h3>
+            <ul>
+                <li>✓ Express your concern in a caring, non-judgmental way</li>
+                <li>✓ Encourage them to seek professional help</li>
+                <li>✓ Offer to help them find resources</li>
+                <li>✓ Set boundaries to protect yourself financially</li>
+                <li>✓ Take care of your own emotional health</li>
+                <li>✓ Attend support groups for families (Gam-Anon)</li>
+            </ul>
+
+            <h3>Don't:</h3>
+            <ul>
+                <li>✗ Lecture, preach, or moralize</li>
+                <li>✗ Lend them money or pay their gambling debts</li>
+                <li>✗ Cover up or make excuses for their behavior</li>
+                <li>✗ Try to control their gambling yourself</li>
+                <li>✗ Give up on them - recovery is possible</li>
+            </ul>
+
+            <h2>9. Prevention and Education</h2>
+            <p>Education is key to preventing gambling problems:</p>
+
+            <h3>Understand the Risks</h3>
+            <ul>
+                <li>Know that gambling problems can affect anyone</li>
+                <li>Understand how games are designed to keep players engaged</li>
+                <li>Recognize vulnerability factors (stress, depression, substance use)</li>
+                <li>Learn about the psychological tricks used by casinos</li>
+            </ul>
+
+            <h3>Build Healthy Habits</h3>
+            <ul>
+                <li>Develop diverse interests and hobbies</li>
+                <li>Build strong social connections</li>
+                <li>Practice stress management techniques</li>
+                <li>Maintain financial awareness and responsibility</li>
+            </ul>
+
+            <h2>10. Our Commitment to Responsible Gaming</h2>
+            <p>At Glassmorphism Slots, we are committed to:</p>
+
+            <div class="success-box">
+                <ul style="margin-left: 1rem;">
+                    <li><strong>Zero Financial Risk:</strong> All games are completely free with no real money involved</li>
+                    <li><strong>Education:</strong> Providing information about responsible gaming</li>
+                    <li><strong>Awareness:</strong> Highlighting the difference between demo play and real gambling</li>
+                    <li><strong>Resources:</strong> Connecting users with help if needed</li>
+                    <li><strong>Transparency:</strong> Being clear that this is entertainment, not gambling</li>
+                </ul>
+            </div>
+
+            <h2>11. Age Restrictions</h2>
+            <p>Our platform is intended for users 18 years and older. While we don't involve real money, we maintain this restriction because:</p>
+            <ul>
+                <li>Casino-themed content should be viewed by adults</li>
+                <li>We want to promote responsible attitudes toward gambling</li>
+                <li>Minors should not be encouraged to engage with gambling content</li>
+                <li>Parents and guardians should monitor young people's internet use</li>
+            </ul>
+
+            <h2>12. Myths About Gambling</h2>
+            <p>Don't fall for these common gambling myths:</p>
+
+            <div class="checklist">
+                <div class="checklist-item">
+                    <strong>Myth:</strong> "I'm due for a win" or "I'm on a losing streak"
+                    <br><strong>Reality:</strong> Each spin/hand is independent. Past results don't affect future outcomes.
+                </div>
+                <div class="checklist-item">
+                    <strong>Myth:</strong> "I have a system that works"
+                    <br><strong>Reality:</strong> No system can overcome the house edge in games of chance.
+                </div>
+                <div class="checklist-item">
+                    <strong>Myth:</strong> "I can quit anytime I want"
+                    <br><strong>Reality:</strong> Gambling addiction is a real condition that requires professional help.
+                </div>
+                <div class="checklist-item">
+                    <strong>Myth:</strong> "Gambling is a way to make money"
+                    <br><strong>Reality:</strong> Gambling should be entertainment. The house always has an advantage.
+                </div>
+                <div class="checklist-item">
+                    <strong>Myth:</strong> "Problem gamblers gamble every day"
+                    <br><strong>Reality:</strong> Problem gambling can occur with any frequency.
+                </div>
+            </div>
+
+            <h2>13. Taking Control</h2>
+            <p>If you're concerned about your relationship with gambling, take action now:</p>
+
+            <ol>
+                <li><strong>Acknowledge the Problem:</strong> The first step is admitting there's an issue</li>
+                <li><strong>Reach Out for Help:</strong> Contact a helpline or counselor</li>
+                <li><strong>Tell Someone You Trust:</strong> Share your struggle with family or friends</li>
+                <li><strong>Exclude Yourself:</strong> Use self-exclusion programs at gambling sites</li>
+                <li><strong>Manage Your Finances:</strong> Limit access to money and credit</li>
+                <li><strong>Fill the Void:</strong> Replace gambling with healthy activities</li>
+                <li><strong>Stay Committed:</strong> Recovery is a journey, not a destination</li>
+            </ol>
+
+            <h2>14. Remember</h2>
+            <div class="info-box">
+                <p><strong>This Platform is for Entertainment Only:</strong> Glassmorphism Slots exists to provide fun without financial consequences. If you enjoy casino games, this is a safe way to experience them. If you're using this as a substitute for real gambling, that's a positive choice!</p>
+                
+                <p style="margin-top: 1rem;"><strong>Real Gambling is Different:</strong> If you choose to gamble with real money elsewhere, please do so responsibly, within your means, and never as a way to solve financial problems.</p>
+                
+                <p style="margin-top: 1rem;"><strong>Help is Available:</strong> If gambling has become a problem, professional help is available and recovery is possible. You're not alone.</p>
+            </div>
+
+            <h2>15. Additional Resources</h2>
+            <p>For more information about responsible gaming:</p>
+            <ul>
+                <li><strong>National Center for Responsible Gaming:</strong> www.icrg.org</li>
+                <li><strong>Responsible Gambling Council:</strong> www.responsiblegambling.org</li>
+                <li><strong>Smart Recovery:</strong> www.smartrecovery.org/addiction-resources/gambling-addiction</li>
+                <li><strong>American Psychiatric Association:</strong> Information on gambling disorder</li>
+                <li><strong>Psychology Today:</strong> Find therapists specializing in gambling addiction</li>
+            </ul>
+
+            <h2>16. Contact Us</h2>
+            <p>If you have questions about our responsible gaming policies or need guidance finding help:</p>
+            <ul>
+                <li><strong>Email:</strong> nurlanmammadli2@gmail.com</li>
+                <li><strong>Contact Form:</strong> <a href="contact.html" style="color: #f093fb;">Contact Us</a></li>
+            </ul>
+
+            <div class="warning-box">
+                <p><strong>Emergency:</strong> If you or someone you know is in crisis due to gambling-related issues, contact your local crisis hotline or emergency services immediately.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>🎰 Glassmorphism Slots</h3>
+                <p>Your safe destination for free demo casino games. Entertainment without financial risk.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="games.html">Games</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Legal</h3>
+                <ul class="footer-links">
+                    <li><a href="terms.html">Terms of Service</a></li>
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                    <li><a href="responsible.html">Responsible Gaming</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Important Notice</h3>
+                <p>This is a demo platform. No real money gambling. 18+ only. Play responsibly.</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Glassmorphism Slots. All rights reserved. | Demo Platform - No Real Money Gaming</p>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.toggle('active');
+        }
+
+        document.addEventListener('click', function(event) {
+            const nav = document.querySelector('nav');
+            const navLinks = document.getElementById('navLinks');
+            
+            if (!nav.contains(event.target) && navLinks.classList.contains('active')) {
+                navLinks.classList.remove('active');
+            }
+        });
+    </script>
+</body>
+</html>
