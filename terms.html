@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms of Service - Glassmorphism Slots</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+            background-attachment: fixed;
+            color: #fff;
+            overflow-x: hidden;
+        }
+
+        nav {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 1rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            background: linear-gradient(135deg, #fff, #f093fb);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+        }
+
+        .nav-links a:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: #fff;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        .page-header {
+            padding: 3rem 2rem;
+            text-align: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .page-header h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .back-home {
+            display: inline-block;
+            margin-top: 1rem;
+            padding: 0.8rem 2rem;
+            background: rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 25px;
+            color: #fff;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .back-home:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+        }
+
+        .content-section {
+            padding: 2rem 2rem 4rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .content-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 3rem;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            margin-bottom: 2rem;
+        }
+
+        .content-card h2 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: #f093fb;
+            margin-top: 2rem;
+        }
+
+        .content-card h2:first-child {
+            margin-top: 0;
+        }
+
+        .content-card h3 {
+            font-size: 1.3rem;
+            margin-top: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .content-card p {
+            line-height: 1.8;
+            margin-bottom: 1rem;
+            opacity: 0.95;
+        }
+
+        .content-card ul, .content-card ol {
+            margin-left: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .content-card li {
+            margin-bottom: 0.5rem;
+            line-height: 1.6;
+        }
+
+        .highlight-box {
+            background: rgba(240, 147, 251, 0.2);
+            border-left: 4px solid #f093fb;
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin: 1.5rem 0;
+        }
+
+        .highlight-box strong {
+            color: #f093fb;
+        }
+
+        .last-updated {
+            text-align: center;
+            opacity: 0.7;
+            font-style: italic;
+            margin-bottom: 2rem;
+        }
+
+        footer {
+            background: rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(10px);
+            padding: 3rem 2rem 1rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: #fff;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            opacity: 0.7;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                gap: 0;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            .page-header h1 {
+                font-size: 2rem;
+            }
+
+            .content-card {
+                padding: 2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .logo {
+                font-size: 1.5rem;
+            }
+
+            .content-card h2 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <div class="logo">🎰 Glassmorphism Slots</div>
+            <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="games.html">Games</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="terms.html">Terms</a></li>
+                <li><a href="privacy.html">Privacy</a></li>
+                <li><a href="responsible.html">Responsible Gaming</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="page-header">
+        <h1>📜 Terms of Service</h1>
+        <p style="font-size: 1.2rem; opacity: 0.9;">Please read these terms carefully before using our platform</p>
+        <a href="index.html" class="back-home">← Back to Home</a>
+    </div>
+
+    <section class="content-section">
+        <p class="last-updated">Last Updated: October 5, 2025</p>
+
+        <div class="content-card">
+            <h2>1. Agreement to Terms</h2>
+            <p>By accessing and using Glassmorphism Slots ("the Platform", "we", "us", or "our"), you agree to be bound by these Terms of Service and all applicable laws and regulations. If you do not agree with any of these terms, you are prohibited from using this platform.</p>
+
+            <div class="highlight-box">
+                <p><strong>Important:</strong> This is a demo platform for entertainment purposes only. No real money gambling or financial transactions are involved.</p>
+            </div>
+
+            <h2>2. Platform Description</h2>
+            <p>Glassmorphism Slots is a free demo casino gaming platform that provides:</p>
+            <ul>
+                <li>Virtual casino games for entertainment purposes only</li>
+                <li>Demo mode gameplay with virtual credits that have no real-world value</li>
+                <li>Educational content about casino games</li>
+                <li>Information about responsible gaming</li>
+            </ul>
+
+            <h3>2.1 No Real Money Gaming</h3>
+            <p>This platform does NOT involve:</p>
+            <ul>
+                <li>Real money deposits or withdrawals</li>
+                <li>Actual gambling with financial risk</li>
+                <li>Cash prizes or rewards with monetary value</li>
+                <li>Any form of betting with real currency</li>
+            </ul>
+
+            <h2>3. User Eligibility</h2>
+            <p>You must meet the following requirements to use this platform:</p>
+            <ul>
+                <li>Be at least 18 years of age or the legal age in your jurisdiction</li>
+                <li>Have the legal capacity to enter into binding agreements</li>
+                <li>Use the platform in compliance with all applicable laws</li>
+                <li>Not be located in a jurisdiction where such content is prohibited</li>
+            </ul>
+
+            <h3>3.1 Age Verification</h3>
+            <p>While we don't collect personal information, you confirm that you are of legal age by using this platform. Parents and guardians are responsible for monitoring minors' internet usage.</p>
+
+            <h2>4. Acceptable Use</h2>
+            <p>You agree to use the platform only for lawful purposes and in accordance with these Terms. You agree NOT to:</p>
+            <ul>
+                <li>Use the platform for any illegal activities</li>
+                <li>Attempt to gain unauthorized access to any part of the platform</li>
+                <li>Use automated systems or software to extract data from the platform</li>
+                <li>Interfere with or disrupt the platform's functionality</li>
+                <li>Impersonate any person or entity</li>
+                <li>Upload or transmit viruses or malicious code</li>
+                <li>Violate any applicable laws or regulations</li>
+            </ul>
+
+            <h2>5. Virtual Credits and Gameplay</h2>
+            <p>All credits, coins, points, or currency shown on the platform are virtual and have no real-world value. You acknowledge that:</p>
+            <ul>
+                <li>Virtual credits cannot be exchanged for real money</li>
+                <li>Virtual winnings have no monetary value</li>
+                <li>Gameplay outcomes are for entertainment only</li>
+                <li>We may reset, modify, or adjust virtual balances at any time</li>
+            </ul>
+
+            <h2>6. Intellectual Property Rights</h2>
+            <p>The platform and its entire contents, features, and functionality are owned by Glassmorphism Slots and are protected by international copyright, trademark, and other intellectual property laws.</p>
+
+            <h3>6.1 Limited License</h3>
+            <p>We grant you a limited, non-exclusive, non-transferable license to access and use the platform for personal, non-commercial purposes. This license does not include:</p>
+            <ul>
+                <li>Modifying or copying platform materials</li>
+                <li>Using materials for commercial purposes</li>
+                <li>Removing copyright or proprietary notices</li>
+                <li>Transferring materials to another person</li>
+            </ul>
+
+            <h2>7. Disclaimer of Warranties</h2>
+            <div class="highlight-box">
+                <p><strong>THE PLATFORM IS PROVIDED "AS IS" AND "AS AVAILABLE" WITHOUT WARRANTIES OF ANY KIND, EITHER EXPRESS OR IMPLIED.</strong></p>
+            </div>
+
+            <p>We do not warrant that:</p>
+            <ul>
+                <li>The platform will be uninterrupted or error-free</li>
+                <li>Defects will be corrected</li>
+                <li>The platform is free of viruses or harmful components</li>
+                <li>Results obtained from use will be accurate or reliable</li>
+            </ul>
+
+            <h2>8. Limitation of Liability</h2>
+            <p>To the fullest extent permitted by law, Glassmorphism Slots shall not be liable for any indirect, incidental, special, consequential, or punitive damages resulting from:</p>
+            <ul>
+                <li>Your use or inability to use the platform</li>
+                <li>Any unauthorized access to our servers</li>
+                <li>Any interruption of transmission to or from the platform</li>
+                <li>Any bugs, viruses, or similar items transmitted through the platform</li>
+                <li>Any errors or omissions in content</li>
+            </ul>
+
+            <h2>9. External Links</h2>
+            <p>The platform may contain links to third-party websites. These links are provided for convenience only. We have no control over and assume no responsibility for the content, privacy policies, or practices of any third-party websites.</p>
+
+            <h2>10. Modifications to the Platform</h2>
+            <p>We reserve the right to:</p>
+            <ul>
+                <li>Modify or discontinue the platform at any time</li>
+                <li>Change these Terms of Service</li>
+                <li>Update features, games, or functionality</li>
+                <li>Restrict access to certain features or the entire platform</li>
+            </ul>
+
+            <p>We will make reasonable efforts to notify users of significant changes, but continued use of the platform constitutes acceptance of modifications.</p>
+
+            <h2>11. Termination</h2>
+            <p>We may terminate or suspend your access to the platform immediately, without prior notice or liability, for any reason, including breach of these Terms. Upon termination, your right to use the platform will immediately cease.</p>
+
+            <h2>12. Governing Law</h2>
+            <p>These Terms shall be governed by and construed in accordance with the laws of Azerbaijan, without regard to its conflict of law provisions.</p>
+
+            <h2>13. Dispute Resolution</h2>
+            <p>Any disputes arising from these Terms or use of the platform shall be resolved through:</p>
+            <ol>
+                <li>Good faith negotiation between the parties</li>
+                <li>Mediation if negotiation fails</li>
+                <li>Binding arbitration as a last resort</li>
+            </ol>
+
+            <h2>14. Severability</h2>
+            <p>If any provision of these Terms is found to be unenforceable or invalid, that provision will be limited or eliminated to the minimum extent necessary so that these Terms will otherwise remain in full force and effect.</p>
+
+            <h2>15. Entire Agreement</h2>
+            <p>These Terms constitute the entire agreement between you and Glassmorphism Slots regarding use of the platform and supersede all prior agreements and understandings.</p>
+
+            <h2>16. Contact Information</h2>
+            <p>If you have any questions about these Terms of Service, please contact us:</p>
+            <ul>
+                <li><strong>Email:</strong> nurlanmammadli2@gmail.com</li>
+                <li><strong>Contact Page:</strong> <a href="contact.html" style="color: #f093fb;">Contact Us</a></li>
+            </ul>
+
+            <div class="highlight-box">
+                <p><strong>Remember:</strong> This platform is for entertainment only. We promote responsible gaming and do not encourage real money gambling. If you or someone you know has a gambling problem, please seek professional help.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>🎰 Glassmorphism Slots</h3>
+                <p>Your safe destination for free demo casino games. Entertainment without financial risk.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="games.html">Games</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Legal</h3>
+                <ul class="footer-links">
+                    <li><a href="terms.html">Terms of Service</a></li>
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                    <li><a href="responsible.html">Responsible Gaming</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Important Notice</h3>
+                <p>This is a demo platform. No real money gambling. 18+ only. Play responsibly.</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Glassmorphism Slots. All rights reserved. | Demo Platform - No Real Money Gaming</p>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.toggle('active');
+        }
+
+        document.addEventListener('click', function(event) {
+            const nav = document.querySelector('nav');
+            const navLinks = document.getElementById('navLinks');
+            
+            if (!nav.contains(event.target) && navLinks.classList.contains('active')) {
+                navLinks.classList.remove('active');
+            }
+        });
+    </script>
+</body>
+</html>
